@@ -285,7 +285,7 @@ void Board::printBoard(bool end)
 {
   clear();
   printw("  CONTROLS:\n");
-  printw("  ARROW KEYS : MOVE\n");
+  printw("  ARROW KEYS + HJKL : MOVE\n");
   printw("  F : CLICK A MINE\n");
   printw("  G : PLACE FLAG\n");
   printw("  Q : QUIT\n");
