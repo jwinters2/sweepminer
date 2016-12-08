@@ -4,23 +4,23 @@ Simple terminal minesweeper game using ncurses
 
 Dependencies: ncurses
 
-  Ubuntu and friends: $ sudo apt-get install libncurses-dev
+    Ubuntu and friends: $ sudo apt-get install libncurses-dev
   
-                Arch: $ sudo pacman -S ncurses
+                  Arch: $ sudo pacman -S ncurses
                 
-               Other: you can figure it out, I believe at you
+                 Other: you can figure it out, I believe at you
 
 
 To install:
 
-  $ make
+      $ make
   
-  $ sudo make install
+      $ sudo make install
   
   
 To run:
 
-  $ sweepminer width height number_of_mines
+    $ sweepminer width height number_of_mines
   
 
 Where width, height, and number_of_mines are integers
@@ -28,11 +28,11 @@ Where width, height, and number_of_mines are integers
   
 Controls:
 
-  Arrow Keys / HJKL : Move Cursor
-  
-                  F : Click on mine
+    Arrow Keys / HJKL : Move Cursor
+ 
+                    F : Click on mine
                   
-                  G : Toggle flag
+                    G : Toggle flag
                   
-                  Q : Quit Game (quitter)
+                    Q : Quit Game (quitter)
                   
