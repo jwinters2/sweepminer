@@ -44,6 +44,7 @@ Board::~Board()
 void Board::start()
 {
   initscr();
+  curs_set(0);
   start_color();
 
   init_pair('1',COLOR_CYAN,COLOR_BLACK);
