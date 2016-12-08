@@ -59,29 +59,32 @@ int Cell::getFlag()
 
 const char* Cell::getChar(bool end)
 {
+  const char* retval;
+
   if(is_mine && end)
   {
-    return "#";
+    retval = "#";
   }
-  if(is_hidden)
+  else if(is_hidden)
   {
     switch(flag)
     {
-      case 0: return "-";
-      case 1: return "*";
-      case 2: return "?";
+      case 0: retval = "-"; break;
+      case 1: retval = "*"; break;
+      case 2: retval = "?"; break;
     }
   }
-  switch(adjacent)
+  else switch(adjacent)
   {
-    case 0: return " ";
-    case 1: return "1";
-    case 2: return "2";
-    case 3: return "3";
-    case 4: return "4";
-    case 5: return "5";
-    case 6: return "6";
-    case 7: return "7";
-    case 8: return "8";
+    case 0: retval = " "; break;
+    case 1: retval = "1"; break;
+    case 2: retval = "2"; break;
+    case 3: retval = "3"; break;
+    case 4: retval = "4"; break;
+    case 5: retval = "5"; break;
+    case 6: retval = "6"; break;
+    case 7: retval = "7"; break;
+    case 8: retval = "8"; break;
   }
+  return retval;
 }
