@@ -1,6 +1,7 @@
 CC=g++
 CFLAGS=-Wall
 LDFLAGS=-lncurses
+INSTALL_PATH=/usr/local
 
 all: sweepminer
 
@@ -15,3 +16,9 @@ cell.o: cell.cpp
 
 clean:
 	rm *.o sweepminer
+
+install:
+	mv sweepminer $(INSTALL_PATH)/bin
+
+uninstall:
+	rm $(INSTALL_PATH)/bin/sweepminer
