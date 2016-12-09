@@ -16,6 +16,11 @@ To install:
       $ make
   
       $ sudo make install
+
+
+To uninstall:
+
+      $ sudo make uninstall
   
   
 To run:
@@ -35,4 +40,4 @@ Controls:
                     G : Toggle flag
                   
                     Q : Quit Game (quitter)
-                  
+                 
