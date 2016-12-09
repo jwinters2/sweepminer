@@ -276,7 +276,8 @@ bool Board::sweepCell()
         !IsInvalidCoord(cursor_x+i,cursor_y+j) &&
         cells[cursor_x+i][cursor_y+j]->getFlag() == 0)
         {
-          sweepCell(cursor_x+i,cursor_y+j);
+          if( !sweepCell(cursor_x+i,cursor_y+j))
+          return false;
         }
       }
     }
