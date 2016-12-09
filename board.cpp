@@ -248,6 +248,42 @@ bool Board::sweepCell()
     calculateNumbers();
     board_is_untouched = false;
   }
+
+  int count = 0;
+  for(int i=-1;i<=1;i++)
+  {
+    for(int j=-1;j<=1;j++)
+    {
+      if( !(i==0 && j==0) &&
+         !IsInvalidCoord(cursor_x+i,cursor_y+j) &&
+         cells[cursor_x+i][cursor_y+j]->getFlag() == 1 && 
+         cells[cursor_x+i][cursor_y+j]->getIsHidden())
+      {
+        count++;
+      }
+    }
+  }
+
+  bool adj_full = (cells[cursor_x][cursor_y]->getAdjacent() == count);
+  printw("Count: %d:%d\n",count,cells[cursor_x][cursor_y]->getAdjacent());
+  getch();
+
+  if(adj_full && count != 0 && !cells[cursor_x][cursor_y]->getIsHidden())
+  {
+    for(int i=-1;i<=1;i++)
+    {
+      for(int j=-1;j<=1;j++)
+      {
+        if( !(i==0 && j==0) && 
+        !IsInvalidCoord(cursor_x+i,cursor_y+j) &&
+        cells[cursor_x+i][cursor_y+j]->getFlag() == 0)
+        {
+          sweepCell(cursor_x+i,cursor_y+j);
+        }
+      }
+    }
+  }
+
   return sweepCell(cursor_x,cursor_y);
 }
 
@@ -259,14 +295,14 @@ bool Board::sweepCell(int x,int y)
   }
 
   bool recursive = cells[x][y]->getIsHidden();
-
   cells[x][y]->setIsHidden(false);
+
   if(cells[x][y]->getIsMine())
   {
     still_going = false;
     return false;
   }
-  else if(cells[x][y]->getAdjacent() == 0 && recursive)
+  else if( cells[x][y]->getAdjacent() == 0 && recursive)
   {
     for(int i=-1;i<=1;i++)
     {
