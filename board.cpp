@@ -265,8 +265,6 @@ bool Board::sweepCell()
   }
 
   bool adj_full = (cells[cursor_x][cursor_y]->getAdjacent() == count);
-  printw("Count: %d:%d\n",count,cells[cursor_x][cursor_y]->getAdjacent());
-  getch();
 
   if(adj_full && count != 0 && !cells[cursor_x][cursor_y]->getIsHidden())
   {
