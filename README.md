@@ -1,6 +1,8 @@
 # sweepminer
 Simple terminal minesweeper game using ncurses
 
+I wrote this just to kill time in a writing class, so I didn't code properly
+like I should have (hence there are no comments)
 
 Dependencies: ncurses
 

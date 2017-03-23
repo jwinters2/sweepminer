@@ -11,6 +11,11 @@ Board::Board(int width_a,int height_a,int number_of_mines_a)
   height = height_a;
   number_of_mines = number_of_mines_a;
 
+  if(number_of_mines > width*height)
+  {
+    number_of_mines = width*height;
+  }
+
   cursor_x = width / 2;
   cursor_y = height / 2;
 
@@ -112,7 +117,7 @@ void Board::start()
             printw(" ");
           }
           attron(COLOR_PAIR('#') | A_BOLD);
-          printw("YOU LOSE DUMBFUCK!!!");
+          printw("YOU LOSE!!!");
           attroff(COLOR_PAIR('#') | A_BOLD);
           getch();
           return;
